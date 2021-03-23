@@ -1,0 +1,24 @@
+---
+- name: install haproxy role
+  hosts: serverd.lab.example.com
+  vars:
+       haproxy_backend_servers:
+               - name: webhost1
+                 address: servera.lab.example.com
+               - name: webhost2
+                 address: serverc.lab.example.com
+  roles:
+          - balancer
+ 
+- name: install php role
+  hosts: prod,test
+  roles:
+          - phpinfo
+  post_tasks:
+          - name: copy template
+            template:
+                    src: hello.php.j2
+                    dest: /var/www/html/hello.php
+            notify:
+                    - restart webserver
+...

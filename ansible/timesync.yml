@@ -1,0 +1,11 @@
+---
+- name: Uses the timesync role
+  hosts: all
+  vars:
+       timesync_ntp_servers:
+         - hostname: 172.24.0.254 
+           iburst: yes
+  roles:
+         - rhel-system-roles.timesync
+
+...

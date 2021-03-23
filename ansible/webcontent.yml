@@ -1,0 +1,28 @@
+---
+- name: create web content
+  hosts: dev
+  tasks:
+        - name: create webdev group
+          group: 
+              name: webdev
+              state: present
+               
+        - name: create webdev directory
+          file:
+              path: /webdev
+              group: webdev
+              mode: 2775
+              state: directory
+              setype: httpd_sys_content_t
+        - name: create link to /var/www/html/webdev
+          file:
+               src: /webdev
+               dest: /var/www/html/webdev
+               state: link
+        - name: create /webdev/index.html
+          copy:
+              content: "Development\n"
+              dest: /webdev/index.html
+              setype: httpd_sys_content_t
+               
+...

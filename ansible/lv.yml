@@ -1,0 +1,32 @@
+---
+- name: create LVM
+  hosts: all
+  tasks:             
+    - name: create logical volume name data 
+      block:                         
+        - name: create logical volume of 1500M
+          lvol:
+            vg: research
+            lv: data    
+            size: 1500m
+      rescue:     
+        - name: output fail msg   
+          debug:               
+            msg: Could not create logical volume of that size
+        - name: create logical volume of  800m
+          lvol:
+            vg: research
+            lv: data
+            size: 800m
+      always:
+        - name: format lvm
+          filesystem:
+            fstype: ext4
+            dev: /dev/research/data
+          when: " 'research' in ansible_lvm.vgs" 
+
+        - name: seratch not existes
+          debug:
+            msg: Volume group research does not exist
+          when: " 'research' not in ansible_lvm.vgs"
+...

@@ -1,0 +1,40 @@
+---
+- name: create developer on dev and test
+  hosts: dev,test
+  vars_files:
+           - locker.yml
+           - user_list.yml
+  tasks:
+        - name: create devops group 
+          group:
+                name: devops 
+
+        - name: developer user create 
+          user:
+               name: "{{ item.name }}"
+               groups: devops        
+               state: present        
+               password: "{{ PW_developer | password_hash('sha512') }}"     
+          when: item.job == "developer"     
+          loop: "{{ users }}"   
+        
+- name: create manager on prod
+  hosts: prod
+  vars_files:
+           - locker.yml
+           - user_list.yml
+  tasks: 
+        - name: create devops group 
+          group:
+                name: opsmgr 
+        
+        - name: manager user create on prod hosts
+          user:        
+               name: "{{ item.name }}"
+               groups: opsmgr
+               state: present
+               password: "{{ PW_manager | password_hash('sha512') }}"
+          when: item.job == "manager"
+          loop: "{{ users }}"
+
+...

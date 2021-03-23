@@ -1,0 +1,5 @@
+hostname = inventoryhostname
+memory = memory_in_MB
+bios_version = BIOS_version
+vda_size = disk_vda_size
+vdb_size = disk_vdb_size

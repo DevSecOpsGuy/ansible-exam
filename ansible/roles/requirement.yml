@@ -1,0 +1,5 @@
+- name: balancer
+  src: file:///home/student/Downloads/roles/balancer.tar.gz
+- name: phpinfo
+  src: file:///home/student/Downloads/roles/phpinfo.tar.gz
+

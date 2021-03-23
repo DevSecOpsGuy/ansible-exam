@@ -1,0 +1,15 @@
+---
+- name:
+  hosts: prod
+  tasks:
+       - name: create vg    
+         lvg:
+                 vg: research
+                 pvs: /dev/sdb
+       - name: 1500m
+         lvol:
+                 vg: research
+                 lv: data
+                 size: "1500"
+
+...
