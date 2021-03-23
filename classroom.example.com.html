@@ -1,0 +1,216 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"></head><body><p>1. Install and configure Ansible</p>
+<p>install &amp; config Ansible on the control node classroom.example.com</p>
+<p>* install the require packages</p>
+<p>* create a static file called /home/admin/ansible/inventory so that:</p>
+<p>- servera is a member of the dev host group</p>
+<p>- serverb is member of the test host group</p>
+<p>- serverc and serverb are member of the prod host group</p>
+<p>- serverd is member of the balancers host group</p>
+<p>- The prod group is a member of the webservers host group</p>
+<p>* Create a configuration file calles /home/admin/ansible/ansible.cfg</p>
+<p>- The host inventory file is /home/admin/ansible/inventory</p>
+<p>- The location of role used in playbooks include /home/admin/ansible/roles</p>
+<p>
+  <br>
+</p>
+<p>2. Create and run Ansible ad-hoc commands</p>
+<p>As a system administrator you will need install software on the managed nodes.</p>
+<p>Create a shell script called /home/admin/ansible/adhoc.sh the user 
+ansible ad-hoc command to create a yum repository on each of the managed
+ nodes as follows:</p>
+<p>Repository 1:</p>
+<p>- The name of the repository is EX294_BASE</p>
+<p>- The description is EX294 base software</p>
+<p>- The base URL is http://content.example.com/rhel8.0/x86_64/dvd/BaseOs</p>
+<p>- GPG signature checking is enabled</p>
+<p>- The GPG Key URL is http://server.network.example.com/RHEL/RPM-GPG-KEY-redhat-release</p>
+<p>- The repository is enabled</p>
+<p>Repository 2:</p>
+<p>- The name of the repository is EX294_STREM</p>
+<p>- The description is EX294 base software</p>
+<p>- The base URL is http://content.example.com/rhel8.0/x86_64/dvd/AppStream</p>
+<p>- GPG signature checking is enabled</p>
+<p>- The GPG Key URL is http://server.network.example.com/RHEL/RPM-GPG-KEY-redhat-release</p>
+<p>- The repository is enabled</p>
+<p>
+  <br>
+</p>
+<p>3. Install packages</p>
+<p>Create a playbook called /home/admin/ansible/packages.yml that:</p>
+<p>- Installs the php &amp; mariadb on hosts in the dev,test and prod host group</p>
+<p>- Installs the RPM Development Tools package group on host in the dev host group</p>
+<p>- Update all packages to the latest version on host in the dev host group</p>
+<p>
+  <br>
+</p>
+<p>4. Use a RHEL system role</p>
+<p>Install the RHEL System role package &amp; create a playbook called /home/admin/ansible/timesync.yml that:</p>
+<p>- Runs on all managed nodes</p>
+<p>- Uses the timesync role</p>
+<p>- Configures the role to use the currently active NTP provider</p>
+<p>- Configure the role to use the time server 172.24.0.254</p>
+<p>- Configure the role to enable the iburst parameter</p>
+<p>
+  <br>
+</p>
+<p>5. Install roles using Ansible Galaxy</p>
+<p>use Ansible Galaxy with a requirements file called 
+/hom/admin/ansible/roles/reuirement.yml to download and install role to 
+/home/admin/ansible/roles from following URL:</p>
+<p>* http://content.example.com/courses/rh294/rhel8.0//materials/balancer.tgz</p>
+<p>The Name of the role should be balancer</p>
+<p>* http://content.example.com/courses/rh294/rhel8.0//materials/phpinfo.tgz</p>
+<p>The name of this role should be phpinfo</p>
+<p>
+  <br>
+</p>
+<p>6. Create &amp; use a role</p>
+<p>Create a role called apache in /home/admin/ansible/roles with the following requirement:</p>
+<p>- The httpd package is install, enabled on boot and started</p>
+<p>- The Firewall is enabled &amp; running with a rule to allow access the web server</p>
+<p>- A template file index.html.j2 exists and is used to create the file
+ /var/www/html/index.html with the Welcome to HOSTNAME ON IPADDRESS</p>
+<p>where HOSTNAME is the fqdn of the managed node and ip address is the ip address of managed node</p>
+<p>* create a playbook called /home/admin/ansible/newrole.yml that uses this role as foloows:</p>
+<p>- The playbook runs on host in the webservers host group</p>
+<p>
+  <br>
+</p>
+<p>7. Use roles from Ansible Galaxy</p>
+<p>Create a playbook called /home/admin/ansible/roles.yml</p>
+<p>* The palybook contains a play that runs on host in the balances host group and uses the balances role.</p>
+<p>- This role configures a service to load balance web server request between hosts in the webserver host group.</p>
+<p>- Browsing to host in the balances host group ( for example http://serverd.lab.example.com) produces the following output:</p>
+<p>Welcome to serverb.lab.example.com on 172.24.0.11</p>
+<p>- Reloading the Browser produces output from the alternet web server:</p>
+<p>Welcome to serverc.lab.example.com on 172.24.1.2</p>
+<p>* The Playbook contains a play the runs on hosts in webserver host group and user the phpinfo role.</p>
+<p>- Browsing to host in the webserver host group with the URL /hell.php produces the following out[ut :</p>
+<p>Hello PHP World from FQDN</p>
+<p>- For example Browsing to http://serverc.lab.example.com/hello.php produces the following output:</p>
+<p>Hello PHP World from serverc.lab.example.com</p>
+<p>along with various details of the PHP configuration include the version of PHP that is installed.</p>
+<p>- Similarly, Browsing to http://serverb.lab.example.com/hello.php, produces the following output:</p>
+<p>Hello PHP World from serverc.example.com</p>
+<p>along with various details of the PHP configuration including the version of PHP that is installed.</p>
+<p>
+  <br>
+</p>
+<p>8. Create &amp; use a logical Volume</p>
+<p>Create a playbook called /home/admin/ansible/ansible/lv.yml that runs on all managed nodes that does the following:</p>
+<p>* Creates a logocal volume with these requirement:</p>
+<p>- The logical Volume is Created in the research volume group</p>
+<p>- The logical volume name is data</p>
+<p>- The logical volume size is 1500 Mib</p>
+<p>* Format the logical volume with the ext4 file system</p>
+<p>* if the requested logical volume size cannot be created, the error message</p>
+<p>Could not create logical volume of that size</p>
+<p>should be displayed and size 800 MiB should be used instead.</p>
+<p>* if the volume research does not exist, the error message</p>
+<p>volume group does not exist</p>
+<p>should be displayed</p>
+<p>* Does NOT mount the logical volume in any way.</p>
+<p>
+  <br>
+</p>
+<p>9. Generate a host file</p>
+<p>* Download an initial template file from 
+http://content.example.com/courses/rh294/rhel8.0//materials/host.j2 to 
+/home/admin/ansible</p>
+<p>* Complete the template so that it can he used to generate a file with a line for each host in the same format as /etc/hosts</p>
+<p>* Create a playbook call /home/admin/host.yml that uses this template
+ to generate the file /etc/myhosts on hosts in the dev host group.</p>
+<p>When the playbook is run, the file /etc/myhosts on host in the dev host group should have a line for each managed hosts:</p>
+<p>127.0.0.1 localhost localhost.localdoamin localhost4 localhost4.localdomain</p>
+<p>::1 localhost localhost.localdoamin localhost6 localhost6.localdomain</p>
+<p>172.24.10.6 srvera.lab.example.com</p>
+<p>172.24.10.7 serverb.lab.example.com</p>
+<p>172.24.10.8 serverc.lab.example.com</p>
+<p>172.24.10.9 serverd.lab.example.com</p>
+<p>
+  <br>
+</p>
+<p>Note: The order in which the inventory host names appear is not important.</p>
+<p>
+  <br>
+</p>
+<p>10. Modify file content</p>
+<p>Create a playbook called /home/admin/ansible/issue.yml</p>
+<p>* The playbook runs on all inventory hosts</p>
+<p>* The playbook replaces the content of /etc/issue with a single line of text as follows:</p>
+<p>- On host is the dev host group, the line reads: Development</p>
+<p>- On hosts in the test host group, the line read: Test</p>
+<p>- On hosts in the prod hosts group, the line read: Production</p>
+<p>
+  <br>
+</p>
+<p>11. Create a Web content directory</p>
+<p>Create a playbook called /home/admin/ansible/webcontent.yml as follows:</p>
+<p>* The playbook runs managed node in the dev host group</p>
+<p>* Create the directory /webdev with the following requirement:</p>
+<p>- it is owner by the webdev group</p>
+<p>- it has regular permissions: owner=read+write+execute,group=r+w+x,other=r+x</p>
+<p>- it has special permission: set group GID</p>
+<p>* Symbolically link /var/www/html/webdev to /webdev</p>
+<p>* Create the file /web/index.html with a single line of text that reads: Development</p>
+<p>* Browsing this directory on host in the dev host group ( for example
+ http://servera.lab.example.com/webdev/) produces the following output:</p>
+<p>Development</p>
+<p>
+  <br>
+</p>
+<p>12. Generate a hardware report</p>
+<p>Create a playbook called /home/admin/ansible/hwreport.yml that 
+produces an output file called /root/hwreport.txt on all managed nodes 
+with the following information:</p>
+<p>- Inventory hostname</p>
+<p>- Total Memory</p>
+<p>- BIOS version</p>
+<p>- Size of disk device vda</p>
+<p>- Size of disk device vdb</p>
+<p>- Each line of the output file contains a single key=value pair.</p>
+<p>* your playbook should:</p>
+<p>- Download the file from 
+http://content.example.com/courses/rh294/rhel8.0/materials/hwreport.empty
+ and save it is aas /root/hwreport.txt</p>
+<p>- Modify /root/hwreport.txt with the correct values</p>
+<p>- if a hardware item does not exist, the associated value should be set to NONE</p>
+<p>
+  <br>
+</p>
+<p>13. Create a password vault</p>
+<p>Create an ansible vault to store user pasword as follows:</p>
+<p>* The name of the vault is /home/admin/ansible/locker.yml</p>
+<p>* The vault contains two variables with names:</p>
+<p>- PW_developer with value Imadev</p>
+<p>- PW_manager with value Imamgr</p>
+<p>* The Password to encrypt and decrypt the vault is whenyouwishuponastar</p>
+<p>* The password is stored in the file /home/admin/ansible/secret.txt</p>
+<p>
+  <br>
+</p>
+<p>14. Create user accounts</p>
+<p>* Download a list of user to be created from http://content.example.com/courses/rh294/rhel8.0/materials/user_list.yml</p>
+<p>* Using the password vault /home/admin/ansible/locker.yml create 
+elsewhere in this exam, create a play book called 
+/home/admin/ansible/users.yml that create user account as following:</p>
+<p>* User with job description of developer should be:</p>
+<p>- create on managed node in the dev and test host group</p>
+<p>- assigned the password from the pw_devloper variable</p>
+<p>- a member of supplementary group devops</p>
+<p>* User with a job description of manager should be:</p>
+<p>- create on managed node in the prod host group</p>
+<p>- assigned the password from pw_manager variable</p>
+<p>- a member of supplementary group opsmgr</p>
+<p>* password should use the SHA512 gas format</p>
+<p>* Your playbook should work using the vault password file /home/admin/ansible/secret.txt create elsewhere in this exam</p>
+<p>
+  <br>
+</p>
+<p>15. ReKey an Ansible vault</p>
+<p>Rekey an existing Ansible vault as follows:</p>
+<p>- Download the Ansible vault from http://content.example.com/courses/rh294/rhel8.0/vaultkey.yml to /home/admin/ansible/</p>
+<p>- The current vault password is ansible@redhat</p>
+<p>- The new vault password is redhat@ansible</p>
+<p>- The vault remains in an encrypted state with the new password</p></body></html>
