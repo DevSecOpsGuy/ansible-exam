@@ -1,28 +1,47 @@
 ---
-- name: create web content
+- name: create webcontent
   hosts: dev
   tasks:
-        - name: create webdev group
-          group: 
-              name: webdev
+        - name: install httpd
+          yum:
+              name: httpd
               state: present
-               
+        - name: start and enabled httpd
+          service:
+                  name: httpd
+                  state: started
+                  enabled: yes
+        - name: start and enabled firewalld
+          service:
+                  name: firewalld
+                  state: started
+                  enabled: yes
+        - name: allow http
+          firewalld:
+                  service: http
+                  state: enabled
+                  permanent: yes
+                  immediate: yes
+        - name: create webdev group
+          group:
+                  name: webdev
+                  state: present
         - name: create webdev directory
           file:
-              path: /webdev
-              group: webdev
-              mode: 2775
-              state: directory
-              setype: httpd_sys_content_t
-        - name: create link to /var/www/html/webdev
-          file:
-               src: /webdev
-               dest: /var/www/html/webdev
-               state: link
-        - name: create /webdev/index.html
+               path: /webdev
+               group: webdev
+               mode: 2775
+               setype: httpd_sys_content_t
+               state: directory
+        - name: create link to /var/www/html
+          file: 
+                src: /webdev
+                dest: /var/www/html/webdev
+                state: link
+        - name: create content
           copy:
-              content: "Development\n"
-              dest: /webdev/index.html
-              setype: httpd_sys_content_t
-               
+                content: "Devlopment"
+                dest: /webdev/index.html
+                setype: httpd_sys_content_t 
+
 ...

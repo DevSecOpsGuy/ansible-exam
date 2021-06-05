@@ -1,0 +1,33 @@
+---
+- name: create logical volume
+  hosts: all
+  tasks:
+        - name: insure volume group research exist
+          debug:
+                msg: "volume group does not exist"
+          when: "'research' not in ansible_lvm.vgs"
+        - name: create logical volume
+          block:
+                - name: create 1500mb logical volume
+                  lvol:
+                       vg: research
+                       lv: data
+                       size: 1500m
+                  when: "'research' in ansible_lvm.vgs"
+          rescue:
+                - name: if dont have 1500mb 
+                  debug:
+                       msg: "Could not create logical volume of that size"
+                - name: create 800mb logical volume
+                  lvol:
+                       vg: research
+                       lv: data
+                       size: 800m
+          always:
+                - name: format logical volume
+                  filesystem:
+                            fstype: ext4
+                            dev: /dev/research/data
+                  when: "'research' in ansible_lvm.vgs"
+
+...

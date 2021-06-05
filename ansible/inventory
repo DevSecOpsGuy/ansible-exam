@@ -1,11 +1,11 @@
 [dev]
-servera.lab.example.com
+node1.example.com
 [test]
-serverb.lab.example.com
+node2.example.com
 [prod]
-serverc.lab.example.com
+node3.example.com
+node4.example.com
 [balancers]
-serverd.lab.example.com
-
+node5.example.com
 [webservers:children]
 prod

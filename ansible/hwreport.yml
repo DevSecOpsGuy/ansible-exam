@@ -1,39 +1,39 @@
 ---
-- name: Generate a hardware report
+- name: genarate hw report
   hosts: all
-  tasks: 
-        - name: get hwreport.empty file
-          get_url:
+  tasks:
+       - name: get hwreport file
+         get_url:
                 url: http://content.example.com/courses/rh294/rhel8.0/materials/hwreport.empty
                 dest: /root/hwreport.txt
-          ignore_errors: yes
-        - name: copy hwreport.empty
-          copy:
-               src: hwreport.empty
-               dest: /root/hwreport.txt
-        - name: get inventory hostname
-          replace:
-                  path: /root/hwreport.txt
-                  regexp: "inventoryhostname"
-                  replace: "{{ ansible_hostname }}"
-        - name: get Total Memory
-          replace:
-                  path: /root/hwreport.txt
-                  regexp: "memory_in_MB"
-                  replace: "{{ ansible_memtotal_mb }}"
-        - name: get BIOS version
-          replace:
-                  path: /root/hwreport.txt
-                  regexp: "BIOS_version"
-                  replace: "{{ ansible_bios_version }}"
-        - name: get disk vda size
-          replace:
-                  path: /root/hwreport.txt
-                  regexp: "disk_vda_size"
-                  replace: "{{ ansible_devices.sda.size | default ('NONE') }}"
-        - name: get disk vdb size
-          replace:
-                  path: /root/hwreport.txt
-                  regexp: "disk_vdb_size"
-                  replace: "{{ ansible_devices.sdb.size | default ('NONE') }}"
+         ignore_errors: yes
+       - name: copy hwreport file
+         copy:
+                src: /home/student/Downloads/hwreport.empty
+                dest: /root/hwreport.txt
+       - name: get hostname
+         replace:
+                 path: /root/hwreport.txt
+                 regexp: "inventoryhostname"
+                 replace: "{{ ansible_hostname }}"
+       - name: get memory
+         replace:
+                 path: /root/hwreport.txt
+                 regexp: "memory_in_MB"
+                 replace: "{{ ansible_memtotal_mb | default ('NONE') }}"
+       - name: get bios version
+         replace:
+                 path: /root/hwreport.txt
+                 regexp: "BIOS_version"
+                 replace: "{{ ansible_bios_version }}"
+       - name: get vda size
+         replace:
+                 path: /root/hwreport.txt
+                 regexp: "disk_vda_size"
+                 replace: "{{ ansible_devices.sda.size | default ('NONE') }}"
+       - name: get vdb size
+         replace:
+                 path: /root/hwreport.txt
+                 regexp: "disk_vdb_size"
+                 replace: "{{ ansible_devices.sdb.size | default ('NONE') }}"
 ...

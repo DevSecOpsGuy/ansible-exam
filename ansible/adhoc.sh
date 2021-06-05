@@ -1,4 +1,3 @@
-#!/bin/bash
-ansible all -m yum_repository -a 'name="EX294_BASE" description="EX294 base software" baseurl=/mnt/BaseOS gpgcheck=no gpgkey="http://server.network.example.com/RHEL/RPM-GPG-KEY-redhat-release" enabled=yes' -K
-
-ansible all -m yum_repository -a 'name="EX294_STREAM" description="EX294 base software" baseurl=/mnt/AppStream gpgcheck=no gpgkey="http://server.network.example.com/RHEL/RPM-GPG-KEY-redhat-release" enabled=yes' -K
+#bin/bash
+ansible all -m yum_repository -a 'name=rh294_BASE description="rh294 base sofware" baseurl=file:///mnt/BaseOS gpgcheck=yes gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial enabled=yes' -K
+ansible all -m yum_repository -a 'name=rh294_STREAM description="rh294 stream sofware" baseurl=file:///mnt/AppStream gpgcheck=yes gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial enabled=yes' -K

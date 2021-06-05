@@ -1,21 +1,20 @@
 ---
-- name: change file content
+- name: create issue file
   hosts: all
   tasks:
-        - name: write Development on dev host issue file
+        - name: write development on dev hosts
           copy:
                content: "Development"
                dest: /etc/issue
           when: "'dev' in group_names"
-        - name: write Test on test host issue file
+        - name: write test on test hosts
           copy:
                content: "Test"
                dest: /etc/issue
           when: "'test' in group_names"
-        - name: write Production on dev prod issue file
+        - name: write production on prod hosts
           copy:
                content: "Production"
                dest: /etc/issue
           when: "'prod' in group_names"
-
 ...

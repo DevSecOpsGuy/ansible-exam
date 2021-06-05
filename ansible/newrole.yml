@@ -1,6 +1,6 @@
 ---
-- name: use new role
-  hosts: webservers,test
+- name:
+  hosts: webservers
   roles:
           - apache
 ...
