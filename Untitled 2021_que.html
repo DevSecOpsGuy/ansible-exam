@@ -1,0 +1,826 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 6.4.6.2 (Linux)"/>
+	<meta name="created" content="2021-03-24T11:18:02.647273921"/>
+	<meta name="changed" content="2021-04-29T20:13:06.024648720"/>
+	<style type="text/css">
+		@page { size: 8.5in 11in; margin: 0.79in }
+		p { margin-bottom: 0.1in; line-height: 115%; background: transparent }
+		a:link { color: #000080; so-language: zxx; text-decoration: underline }
+		strong { font-weight: bold }
+	</style>
+</head>
+<body lang="en-US" link="#000080" vlink="#800000" dir="ltr"><p style="margin-bottom: 0in; line-height: 100%">
+<font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><b>The
+first question (send sub-questions)</b></font></font></p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">1.
+Set the static inventory file of the host group
+/home/student/ansible/inventory</font></font></p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><b>servera</b>
+is a member of the <b>dev</b> host group</font></font></p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><b>serverb</b>
+is a member of the <b>test</b> host group</font></font></p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><b>serverc</b>
+and <b>serverd</b> are members of the <b>prod</b> host group</font></font></p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><b>bastion</b>
+is a member of the <b>balancers</b> host group The</font></font></p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><b>prod</b>
+group is Members of the <b>webservers</b> host group</font></font></p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">2.
+Import the configuration file into the student's home directory,</font></font></p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">3.
+And set the privilege, modify the host group configuration file to
+the student's home directory, set the remote user to student</font></font></p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><span style="display: inline-block; border: none; padding: 0in"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><strong>1.
+Solution:</span></font></font></strong></p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><span style="display: inline-block; border: none; padding: 0in"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><strong>The
+second question (send sub-question)</span></font></font></strong></p>
+<p style="margin-bottom: 0in; line-height: 100%"><span style="display: inline-block; border: none; padding: 0in"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span style="font-weight: normal"><strong>Please
+follow the instructions below to create a shell script named
+/home/student/ansible/adhoc.sh The</span></span></font></font></strong></p>
+<p style="margin-bottom: 0in; line-height: 100%"><span style="display: inline-block; border: none; padding: 0in"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span style="font-weight: normal"><strong>script
+will use Ansible temporary commands to install the yum repository on
+each managed node:</span></span></font></font></strong></p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><span style="display: inline-block; border: none; padding: 0in"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><strong>Repository
+1:</span></font></font></strong></p>
+<p style="margin-bottom: 0in; line-height: 100%"><span style="display: inline-block; border: none; padding: 0in"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span style="font-weight: normal"><strong>The
+name of the repository is rh294_BASE</span></span></font></font></strong></p>
+<p style="margin-bottom: 0in; line-height: 100%"><span style="display: inline-block; border: none; padding: 0in"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span style="font-weight: normal"><strong>The
+base</span></span></font></font></strong></p>
+<p style="margin-bottom: 0in; line-height: 100%"><span style="display: inline-block; border: none; padding: 0in"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span style="font-weight: normal"><strong>URL
+for rh294 base software is described as http://content.example.com/rhel8.0/x86_64/dvd/BaseOS</span></span></font></font></strong></p>
+<p style="margin-bottom: 0in; line-height: 100%"><span style="display: inline-block; border: none; padding: 0in"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span style="font-weight: normal"><strong>GPG
+signature check is enabled and the</span></span></font></font></strong></p>
+<p style="margin-bottom: 0in; line-height: 100%"><span style="display: inline-block; border: none; padding: 0in"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span style="font-weight: normal"><strong>GPG
+key URL is file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial</span></span></font></font></strong></p>
+<p style="margin-bottom: 0in; line-height: 100%"><span style="display: inline-block; border: none; padding: 0in"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span style="font-weight: normal"><strong>repository
+is open</span></span></font></font></strong></p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><span style="display: inline-block; border: none; padding: 0in"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><strong>Repository
+2:</span></font></font></strong></p>
+<p style="margin-bottom: 0in; line-height: 100%"><span style="display: inline-block; border: none; padding: 0in"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span style="font-weight: normal"><strong>The
+name of the repository is rh294_STREAM and the</span></span></font></font></strong></p>
+<p style="margin-bottom: 0in; line-height: 100%"><span style="display: inline-block; border: none; padding: 0in"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span style="font-weight: normal"><strong>description
+is rh294 stream software. The</span></span></font></font></strong></p>
+<p style="margin-bottom: 0in; line-height: 100%"><span style="display: inline-block; border: none; padding: 0in"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span style="font-weight: normal"><strong>base
+URL is http://content.example.com/rhel8.0/x86_64/dvd/AppStream</span></span></font></font></strong></p>
+<p style="margin-bottom: 0in; line-height: 100%"><span style="display: inline-block; border: none; padding: 0in"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span style="font-weight: normal"><strong>Thesignature
+check is enabled. The GPG key URL is
+file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial repository is open</span></span></font></font></strong></p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><span style="display: inline-block; border: none; padding: 0in"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><strong>solution</span></font></font></strong></p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><b>The
+third question (sub-question sent)</b></font></font></p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">Create
+a playbook named /home/student/ansible/packages.yml:</font></font></p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">Install
+the php and mariadb packages on the hosts in the dev, test and prod
+host groups</font></font></p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">Install
+the Development Tools package group on the hosts in the dev host
+group</font></font></p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">Update
+all packages on the hosts in the dev host group to the latest version</font></font></p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><b>solution:</b></font></font></p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><b>Fourth
+question (send sub-question)</b></font></font></p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">Install
+the RHEL system role package and create a playbook</font></font></p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">/home/student/ansible/timesync.yml
+that meets the following conditions :</font></font></p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">Run
+on all managed nodes</font></font></p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">Use
+timesync role</font></font></p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">Configure
+this role to use the currently valid NTP provider</font></font></p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">Configure
+this role to use the time server classroom.example.com</font></font></p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><b>The
+fifth question (send sub-questions)</b></font></font></p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">Use
+Ansible Galaxy to install roles</font></font></p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">Use
+Ansible Galaxy and the required file
+/home/student/ansible/roles/requirements.yml,</font></font></p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">download
+the</font></font></p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">role
+from the following URL and install it to /home/student/ansible/roles:</font></font></p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">http://classroom.example.com
+/content/haproxy.tar.gz The name of this role should be balancer</font></font></p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">http://classroom.example.com/content/phpinfo.tar.gz
+The name of this role should be phpinfo</font></font></p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">solution:</font></font></p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><b>Six,
+create and use roles</b></font></font></p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">0.
+According to the following requirements, create a role named apache
+in /home/student/ansible/roles:</font></font></p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">The
+httpd package has been installed and is set to be enabled at system
+startup</font></font></p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">The
+firewall is enabled and running, and uses rules that allow access to
+the web server</font></font></p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">The
+template file index.html.j2 already exists and is used to create the
+file /var/www/html/index.html with the following output: Welcome to
+HOSTNAME on IPADDRESS</font></font></p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">where
+HOSTNAME is the fully qualified domain name of the managed node, and
+IPADDRESS is the Manage node's IP</font></font></p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">Create
+a playbook /home/student/ansible/newrole.yml</font></font></p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">that
+uses this role as described below: The playbook runs on a host in the
+webservers host group</font></font></p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><b>0.
+Solution</b></font></font></p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%; page-break-before: always">
+<font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><b>Seven,
+use ansible Galaxy role (send sub-questions)</b></font></font></p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">Create
+a playbook named /home/student/ansible/roles.yml according to the
+following requirements:</font></font></p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<ol>
+	<li><p style="margin-bottom: 0in; line-height: 100%"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">The
+	playbook contains a play, which runs on the hosts in the balancers
+	host group and will use the balancer role.</font></font></p>
+</ol>
+<p style="margin-left: 0.5in; margin-bottom: 0in; line-height: 100%; background: transparent; page-break-before: auto">
+<font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">This
+role configures a service to balance the load of web server requests
+among the hosts in the webservers host group.</font></font></p>
+<p style="margin-left: 0.5in; margin-bottom: 0in; line-height: 100%; background: transparent">
+<font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">Browsing
+to a host in the balancers host group (for example,
+http://bastion.lab.example.com/) will generate the following output:
+Welcome to serverc.example.com on 172.25.250.12</font></font></p>
+<p style="margin-left: 0.5in; margin-bottom: 0in; line-height: 100%; background: transparent">
+<font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">Reloading
+the browser will generate it from another web server Output:</font></font></p>
+<p style="margin-left: 0.5in; margin-bottom: 0in; line-height: 100%; background: transparent">
+<font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">Welcome
+to serverd.example.com on 172.25.250.13</font></font></p>
+<ol start="2">
+	<li><p style="margin-bottom: 0in; line-height: 100%"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">The
+	playbook contains a play, which runs on a host in the webservers
+	host group and will use the phpinfo role.</font></font></p>
+</ol>
+<p style="margin-left: 0.5in; margin-bottom: 0in; line-height: 100%; background: transparent; page-break-before: auto">
+<font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">Browsing
+to a host in the webservers host group via URL /hello.php will
+generate the following output:</font></font></p>
+<p style="margin-left: 0.5in; margin-bottom: 0in; line-height: 100%; background: transparent">
+<font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">Hello
+PHP World from FQDN</font></font></p>
+<p style="margin-left: 0.5in; margin-bottom: 0in; line-height: 100%; background: transparent">
+<font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">where
+FQDN is the fully qualified name of the host.</font></font></p>
+<p style="margin-left: 0.5in; margin-bottom: 0in; line-height: 100%; background: transparent">
+<font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">For
+example, browsing to http://serverc.lab.example.com/hello.php will
+generate the following output:</font></font></p>
+<p style="margin-left: 0.5in; margin-bottom: 0in; line-height: 100%; background: transparent">
+<font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">Hello
+PHP World from serverc.lab.example.com</font></font></p>
+<p style="margin-left: 0.5in; margin-bottom: 0in; line-height: 100%; background: transparent">
+<font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">There
+are also various details of PHP configuration, such as installed PHP
+Version etc.</font></font></p>
+<p style="margin-left: 0.5in; margin-bottom: 0in; line-height: 100%; background: transparent">
+<font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">Similarly,
+browsing to http://serverd.lab.example.com/hello.php will generate
+the following output:</font></font></p>
+<p style="margin-left: 0.5in; margin-bottom: 0in; line-height: 100%; background: transparent">
+<font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">Hello
+PHP World from serverd.lab.example.com</font></font></p>
+<p style="margin-left: 0.5in; margin-bottom: 0in; line-height: 100%; background: transparent">
+<font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">There
+are also various details of PHP configuration, such as installed PHP
+Version etc.</font></font></p>
+<p style="margin-left: 0.5in; margin-bottom: 0in; line-height: 100%; background: transparent">
+<br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; line-height: 100%; orphans: 2; widows: 2">
+<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><b>solution:</b></font></font></font></p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; line-height: 100%; orphans: 2; widows: 2">
+<br/>
+
+</p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+<br/>
+
+</p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; line-height: 100%; orphans: 2; widows: 2">
+<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><b>Question
+8</b></font></font></font></p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; line-height: 100%; orphans: 2; widows: 2">
+<br/>
+
+</p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">Create
+a playbook named /home/student/ansible/lv.yml, which will run on all
+managed nodes to perform the following tasks</font></font></font></p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+<br/>
+
+</p>
+<ol>
+	<li><p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+	<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">Create
+	a logical volume that meets the following requirements: the</font></font></font></p>
+</ol>
+<p style="margin-left: 0.5in; margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2; background: transparent; page-break-before: auto">
+<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">logical
+volume is created in the research volume group, the</font></font></font></p>
+<p style="margin-left: 0.5in; margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2; background: transparent">
+<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">name
+of the</font></font></font></p>
+<p style="margin-left: 0.5in; margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2; background: transparent">
+<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">logical
+volume is data, and the size of the logical volume is 1500MiB</font></font></font></p>
+<ol start="2">
+	<li><p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+	<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">Format
+	the logical volume using the ext4 file system</font></font></font></p>
+	<li><p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+	<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">If
+	the requested logical volume size cannot be created, the error
+	message</font></font></font></p>
+</ol>
+<p style="margin-left: 0.5in; margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2; background: transparent; page-break-before: auto">
+<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><b>Could
+not create logical volume of that size</b> should be displayed , and
+the size 800MiB should be used instead.</font></font></font></p>
+<ol start="4">
+	<li><p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+	<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">If
+	the volume group research does not exist, the error message</font></font></font></p>
+	<p style="margin-bottom: 0in; line-height: 100%; orphans: 2; widows: 2">
+	<font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><span style="font-variant: normal"><font color="#4d4d4d"><span style="letter-spacing: normal"><span style="font-style: normal"><b>Volume
+	group does not exist</b></span></span></font></span><span style="font-variant: normal"><font color="#4d4d4d"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+	should be displayed .</span></span></span></font></span></font></font></p>
+	<li><p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+	<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">Do
+	not mount the logical volume in any way.</font></font></font></p>
+</ol>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+<br/>
+
+</p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; line-height: 100%; orphans: 2; widows: 2">
+<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><b>Solution:</b></font></font></font></p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; line-height: 100%; orphans: 2; widows: 2">
+<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><b>Question
+9</b></font></font></font></p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; line-height: 100%; orphans: 2; widows: 2">
+<br/>
+
+</p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">Generate
+template file</font></font></font></p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+<br/>
+
+</p>
+<ol>
+	<li><p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+	<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">Write
+	a template file /home/student/ansible/hosts.j2, which contains one
+	line for each inventory host, and its format is the same as
+	/etc/hosts.</font></font></font></p>
+	<li><p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+	<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">Create
+	a playbook named /home/student/ansible/hosts.yml, which will use
+	this template to generate the file /etc/myhosts on the hosts in the
+	dev host group.</font></font></font></p>
+	<li><p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+	<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">After
+	the playbook runs, the file /etc/myhosts on the hosts in the dev
+	host group should contain one line for each managed host.</font></font></font></p>
+	<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+	</p>
+</ol>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">127.0.0.1
+localhost localhost.localdomain localhost4 localhost4.localdomain4</font></font></font></p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">::1
+localhost localhost.localdomain localhost6 localhost6.localdomain6</font></font></font></p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">172.25.254.10
+servera.lab.example.com servera</font></font></font></p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">172.25.254.11
+serverb.lab.example.com serverb</font></font></font></p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">172.25.254.12
+serverc.lab .example.com serverc</font></font></font></p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">172.25.254.13
+serverd.lab.example.com serverd</font></font></font></p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">172.25.250.254
+bastion.lab.example.com bastion</font></font></font></p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; line-height: 100%; orphans: 2; widows: 2">
+<br/>
+
+</p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; line-height: 100%; orphans: 2; widows: 2">
+<br/>
+
+</p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; line-height: 100%; orphans: 2; widows: 2">
+<br/>
+
+</p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; line-height: 100%; orphans: 2; widows: 2">
+<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><b>The
+tenth question (send sub-question)</b></font></font></font></p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; line-height: 100%; orphans: 2; widows: 2">
+<br/>
+
+</p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">Create
+a playbook named /home/student/ansible/issue.yml as described below:</font></font></font></p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+<br/>
+
+</p>
+<ol>
+	<li><p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+	<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">The
+	playbook will run on all inventory hosts</font></font></font></p>
+	<li><p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+	<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">The
+	playbook will replace the content of /etc/issue with the following
+	line of text:</font></font></font></p>
+	<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+	<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">On
+	the host in the dev host group, this line of text is displayed as:
+	Development</font></font></font></p>
+	<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+	<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">On
+	the host in the test host group, this line of text is displayed as:
+	Test</font></font></font></p>
+	<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+	<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">on
+	the host in the prod host group, this line of text is displayed as:
+	Production</font></font></font></p>
+</ol>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+<br/>
+
+</p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+<br/>
+
+</p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+<br/>
+
+</p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; line-height: 100%; orphans: 2; widows: 2">
+<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><b>Eleven
+questions</b></font></font></font></p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; line-height: 100%; orphans: 2; widows: 2">
+<br/>
+
+</p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">Create
+a playbook named /home/student/ansible/webcontent.yml as described
+below:</font></font></font></p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+<br/>
+
+</p>
+<ol>
+	<li><p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+	<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">The
+	playbook runs on managed nodes in the dev host group</font></font></font></p>
+	<li><p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+	<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">Create
+	a directory/webdev that meets the following requirements: the owner
+	group is the devops group, with regular permissions:
+	owner=read+write+execute, group=read+write+execute
+	other=read+execute, with special permissions: set group ID</font></font></font></p>
+	<li><p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+	<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">Link
+	/var/www/html/webdev to /webdev with a symbolic link</font></font></font></p>
+	<li><p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+	<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">Create
+	the file /webdev/index.html with a single line of text like the
+	following: Development</font></font></font></p>
+	<li><p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+	<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">Browsing
+	this directory on the host in the dev host group (for example,
+	http://servera.lab.example.com/webdev/) will generate the following
+	output: Development</font></font></font></p>
+</ol>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+<br/>
+
+</p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+<br/>
+
+</p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; line-height: 100%; orphans: 2; widows: 2">
+<br/>
+
+</p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; line-height: 100%; orphans: 2; widows: 2; page-break-before: always">
+<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><b>Twelve
+questions</b></font></font></font></p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; line-height: 100%; orphans: 2; widows: 2">
+<br/>
+
+</p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">Generate
+Hardware Report</font></font></font></p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+<br/>
+
+</p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">Create
+a playbook named /home/student/ansible/hwreport.yml, which will
+generate</font></font></font></p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">an
+output file /root/hwreport.txt containing the following information
+on all managed nodes : </font></font></font>
+</p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+<br/>
+
+</p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">Thehost
+name of the inventory is</font></font></font></p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">expressed
+in MB Total memory size</font></font></font></p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">BIOS
+version</font></font></font></p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">Disk
+device vda size</font></font></font></p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">Disk
+device vdb size</font></font></font></p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+<br/>
+
+</p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">Each
+line in the output file contains a key=value pair.</font></font></font></p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+<br/>
+
+</p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">Your
+playbook should:</font></font></font></p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+<br/>
+
+</p>
+<ol>
+	<li><p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+	<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">Download
+	the file from http://172.25.254.254/content/hwreport.empty and save
+	it as /root/hwreport.txt</font></font></font></p>
+	<li><p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+	<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">Modify
+	/root/hwreport.txt with the correct value</font></font></font></p>
+	<li><p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+	<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">If
+	the hardware item does not exist, the related value should be set to
+	NONE</font></font></font></p>
+</ol>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+<br/>
+
+</p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+<br/>
+
+</p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; line-height: 100%; orphans: 2; widows: 2">
+<br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%">hostname =
+inventoryhostname 
+</p>
+<p style="margin-bottom: 0in; line-height: 100%">memory =
+memory_in_MB 
+</p>
+<p style="margin-bottom: 0in; line-height: 100%">bios_version =
+BIOS_version 
+</p>
+<p style="margin-bottom: 0in; line-height: 100%">vda_size =
+disk_vda_size 
+</p>
+<p style="margin-bottom: 0in; line-height: 100%">vdb_size =
+disk_vdb_size</p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; line-height: 100%">
+<br/>
+
+</p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; line-height: 100%">
+<br/>
+
+</p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; line-height: 100%">
+<br/>
+
+</p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; line-height: 100%">
+<br/>
+
+</p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; line-height: 100%">
+<br/>
+
+</p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; line-height: 100%">
+<br/>
+
+</p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; line-height: 100%">
+<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><b>Thirteenth
+question (send sub-question)</b></font></font></font></p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; line-height: 100%; orphans: 2; widows: 2">
+<br/>
+
+</p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">Create
+an Ansible library to store user passwords as described below:</font></font></font></p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+<br/>
+
+</p>
+<ol>
+	<li><p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+	<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">The
+	library name is /home/student/ansible/locker.yml</font></font></font></p>
+	<li><p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+	<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">The
+	library contains two variables, the names are as follows:</font></font></font></p>
+	<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+	<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">pw_developer,
+	the value is Imadev</font></font></font></p>
+	<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+	<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">pw_manager,
+	the value is Imamgr</font></font></font></p>
+	<li><p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+	<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">The
+	password used to encrypt and decrypt the library is
+	whenyouwishuponastar</font></font></font></p>
+	<li><p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+	<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">The
+	password is stored in the file /home/student/ansible/secret.txt</font></font></font></p>
+	<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+	</p>
+</ol>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; line-height: 100%; orphans: 2; widows: 2">
+<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><b>solution</b></font></font></font></p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+<br/>
+
+</p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+<br/>
+
+</p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; line-height: 100%; orphans: 2; widows: 2">
+<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><b>14.
+Create a user account</b></font></font></font></p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; line-height: 100%; orphans: 2; widows: 2">
+<br/>
+
+</p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">1.
+Download the list of users to be created from
+http://172.25.254.254/content/user_list.yml and save it</font></font></font></p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">to
+/home/student/ansible, the user password is from
+/home/student/ansible/locker.yml file.</font></font></font></p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+<br/>
+
+</p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">2.
+Create a playbook named /home/student/ansible/users.yml to create
+user accounts as follows:</font></font></font></p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+<br/>
+
+</p>
+<ul>
+	<li><p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+	<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">Users
+	whose job description is developer should:</font></font></font></p>
+</ul>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+<br/>
+
+</p>
+<ul>
+	<ul>
+		<li><p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+		<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">Created
+		on managed nodes in the dev and test host groups</font></font></font></p>
+		<li><p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+		<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">Assign
+		password from pw_developer variable</font></font></font></p>
+		<li><p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+		<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">Is
+		a member of the additional group student</font></font></font></p>
+	</ul>
+	<li><p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+	<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">Users
+	whose job description is manager should:</font></font></font></p>
+</ul>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+<br/>
+
+</p>
+<ul>
+	<ul>
+		<li><p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+		<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">Created
+		on the managed node in the prod host group</font></font></font></p>
+		<li><p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+		<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">Assign
+		password from pw_manager variable</font></font></font></p>
+		<li><p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+		<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">Is
+		a member of additional group opsmgr</font></font></font></p>
+		<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+		</p>
+	</ul>
+</ul>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">3.
+The password should be in SHA512 hash format.</font></font></font></p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">4.
+Your playbook should be able to use the library password file</font></font></font></p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">/home/student/ansible/secret.txt
+created in other locations in this exam to run normally.</font></font></font></p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+<br/>
+
+</p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; line-height: 100%; orphans: 2; widows: 2">
+<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><b>Solution:</b></font></font></font></p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; line-height: 100%; orphans: 2; widows: 2">
+<br/>
+
+</p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; line-height: 100%; orphans: 2; widows: 2">
+<br/>
+
+</p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; line-height: 100%; orphans: 2; widows: 2">
+<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><b>Fifteen,
+Ansible library key</b></font></font></font></p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; line-height: 100%; orphans: 2; widows: 2">
+<br/>
+
+</p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">Update
+the key of the existing Ansible repository as described below:</font></font></font></p>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+<br/>
+
+</p>
+<ol>
+	<li><p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+	<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">Download
+	the Ansible library from http://172.25.254.254/content/salaries.yml
+	to /home/student/ansible</font></font></font></p>
+	<li><p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+	<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">The
+	current library password is insecure4sure</font></font></font></p>
+	<li><p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+	<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">The
+	new library password is bbe2de98389b</font></font></font></p>
+	<li><p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+	<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">The
+	library remains encrypted with the new password</font></font></font></p>
+</ol>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; line-height: 100%; orphans: 2; widows: 2">
+<font color="#4d4d4d"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><b>solution:</b></font></font></font></p>
+</body>
+</html>
