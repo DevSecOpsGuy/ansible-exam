@@ -1,6 +1,0 @@
-127.0.0.1 localhost localhost.localdoamin localhost4 localhost4.localdomain
-::1 localhost localhost.localdoamin localhost6 localhost6.localdomain
-
-{% for host in groups.all %}
-{{ hostvars[host].ansible_default_ipv4.address }} {{ hostvars[host].ansible_fqdn }} {{ hostvars[host].ansible_hostname }}
-{% endfor %} 
