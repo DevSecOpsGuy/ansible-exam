@@ -1,37 +1,9 @@
-## Welcome to GitHub Pages
+## Welcome to Ansible Exam
 
-You can use the [editor on GitHub](https://github.com/DevSecOpsGuy/ansible-exam/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+## Exam description
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+The performance-based Red Hat Certified Engineer (RHCE) exam for Red Hat Enterprise Linux 8 (EX294) tests your knowledge and skill in managing multiple systems using Red Hat® Ansible® Engine and executing common system administration tasks across a number of systems with Ansible. The skills tested in this exam are the foundation for system administration across many Red Hat products.
 
-### Markdown
+By passing this exam, you become a Red Hat Certified Engineer. An RHCE® is a Red Hat Certified System Administrator (RHCSA) who is ready to use Ansible and scripting to automate Red Hat® Enterprise Linux® tasks, integrate Red Hat emerging technologies, and apply automation for efficiency and innovation. RHCSA certification is required to earn RHCE certification. If you choose to continue your learning journey beyond RHCE, the credential can also serve as a foundational step on your path toward our highest level of certification—Red Hat Certified Architect.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/DevSecOpsGuy/ansible-exam/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+This exam is based on Red Hat Enterprise Linux® 8 and Red Hat Ansible Engine 2.8.
